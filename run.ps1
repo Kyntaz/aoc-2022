@@ -4,5 +4,5 @@ if(!(test-path -PathType container ./build)) {
     ni -itemType directory -path ./build;
 }
 
-g++ "./src/$day/main.cpp" -o "./build/$day.exe" -I.;
-gc "./src/$day/input.txt" | & "./build/$day.exe";
+scalac "./days/$day/$day.scala" "./utils/aoc.scala" -d "./build/";
+gc "./days/$day/input.txt" | & scala -cp "./build" "main";
