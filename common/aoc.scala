@@ -11,3 +11,21 @@ def solve(part: Int, solution: () => Any) = {
         println(s"P$part: ${solution()}");
     }
 }
+
+package utils {
+    extension [T](l: List[T]) def blockBy(f: T => Boolean) = {
+        var blocks = List[List[T]]();
+        var block = List[T]();
+
+        for (el <- l) {
+            if (f(el)) {
+                blocks = blocks.appended(block);
+                block = List[T]();
+            } else {
+                block = block.appended(el);
+            }
+        }
+
+        blocks;
+    }
+}
