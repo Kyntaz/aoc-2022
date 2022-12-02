@@ -75,7 +75,7 @@ def winScore2(play: List[String]) = {
 
 def p1() = {
     getStrategy
-        .map { play => playScore1(play) + winScore1(play)}
+        .map { play => playScore1(play) + winScore1(play) }
         .sum;
 }
 
