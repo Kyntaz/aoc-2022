@@ -11,7 +11,7 @@ def getGroups(rucksacks: List[String]) = {
 }
 
 def commonItem(groups: List[String]) = {
-    var all = groups.flatten.toSet
+    val all = groups.flatten.toSet
     groups.foldLeft(all) { (common, curr) =>
         common & curr.toSet;
     }.head;
