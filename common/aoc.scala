@@ -46,6 +46,10 @@ package utils {
             }
         }
 
+        if (!block.isEmpty) {
+            blocks += block.toList;
+        }
+
         blocks.toList;
     }
 }
