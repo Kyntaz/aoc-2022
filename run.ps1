@@ -8,5 +8,9 @@ if(!(test-path -PathType container ./build)) {
 echo "Compiling...";
 scalac "./days/$day/$day.scala" "./common/aoc.scala" -d "./build/";
 
+if ($LastExitCode -ne 0) {
+    exit;
+}
+
 echo "Running!";
 gc "./days/$day/input.txt" | & scala -cp "./build" "main" $part;
